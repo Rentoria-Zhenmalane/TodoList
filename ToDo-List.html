@@ -3,16 +3,21 @@
 
 <head>
   <title>To Do List</title>
+  <link rel="stylesheet" href="ToDo.css">
 </head>
 
 <body>
   <p> To Do List</p>
   <input placeholder="To Do Name" class="js-name-input">
+  <input class="js-date-input" type="date">
+
   <button onclick="addTodo()"> Add</button>
 
   <div class="js-todo-list">
-    text
+    <!-- Why use div instead of paragraph?
+  because we already used paragraoh in JS. And you can't use paragraph inside another paragraph-->
   </div>
+
 
 
   <script src="toDo-list.js">

@@ -1,4 +1,11 @@
-const toDoList = [];
+const toDoList =
+  [
+    {
+      name: 'kumain',
+      dueDate: '222'
+    }
+
+  ];
 
 renderTodo();
 
@@ -6,16 +13,34 @@ function renderTodo() {
 
   let todoListHTML = '';
 
-  for (i = 0; i < toDoList.length; i++) {
-    const todo = toDoList[i];
-    //access task from array and stoe in todo variable
-    const html = `<p> ${todo}</p>`;
+  for (let i = 0; i < toDoList.length; i++) {
+    const todoObject = toDoList[i];
+    //access task from array and store in todo variable
+
+    //const dueDate = todoObject.dueDate;
+    //const name = todoObject.name; 
+    const { name, dueDate } = todoObject; //called as Destructuring, a shortcut from above.
+
+
+
+    const html = `
+      <div> ${name} </div>
+      <div>${dueDate} </div> 
+      <button onclick=
+        "toDoList.splice(${i}, 1);
+        renderTodo();
+      ">Delete</button>
+      
+    `;
+    //Template literals (backticks) allow embedding variables in strings.
+    //Generating HTML using backticks is a technique that generates html inside Javascript,
+    //Why call renderToDo() inside html? To update the UI everytime you hit delete button. This is called manual rendering.
     // and put it in html code then store it in html varaiable.
+
     todoListHTML += html;
     //accumulate the tasks
   }
 
-  console.log(todoListHTML);
 
   document.querySelector('.js-todo-list')
     .innerHTML = todoListHTML;
@@ -25,18 +50,30 @@ function renderTodo() {
 
 
 function addTodo() {
+  //This function is for getting user input and stores it into an array
 
   const inputElement = document.querySelector('.js-name-input');
   //Get the whole input
+  const dateElement = document.querySelector('.js-date-input');
 
+  const dueDate = dateElement.value;
   const name = inputElement.value;
   console.log(name);
   //Gets whatever value the user put inside the textbox and print it in the console
 
-  toDoList.push(name);
-  console.log(toDoList);
+  toDoList.push
+    ({
+      //name: name,
+      //dueDate: dueDate
+      name,
+      dueDate
+      //shortcut of above
+    });
+
+
 
   inputElement.value = '';
+  dateElement.value = '';
   //every time we click add, the text box resets.
 
   renderTodo();
