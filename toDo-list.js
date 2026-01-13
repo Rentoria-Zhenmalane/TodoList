@@ -22,15 +22,16 @@ function renderTodo() {
     const { name, dueDate } = todoObject; //called as Destructuring, a shortcut from above.
 
 
-
+    //need to separate the three elements using div so the CSS grid could work.
+    //Why div? because div doesn't have a default style, so it's easier to style.
     const html = `
       <div> ${name} </div>
       <div>${dueDate} </div> 
-      <button onclick=
+      <button class="delete-button" onclick=
         "toDoList.splice(${i}, 1);
         renderTodo();
       ">Delete</button>
-      
+
     `;
     //Template literals (backticks) allow embedding variables in strings.
     //Generating HTML using backticks is a technique that generates html inside Javascript,

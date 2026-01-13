@@ -8,15 +8,20 @@
 
 <body>
   <p> To Do List</p>
-  <input placeholder="To Do Name" class="js-name-input">
-  <input class="js-date-input" type="date">
 
-  <button onclick="addTodo()"> Add</button>
+  <div class="todo-input-grid">
+    <input placeholder="To Do Name" class="js-name-input name-input">
+    <input class="js-date-input date-input" type="date">
 
-  <div class="js-todo-list">
-    <!-- Why use div instead of paragraph?
-  because we already used paragraoh in JS. And you can't use paragraph inside another paragraph-->
+    <button class="add-button" onclick="addTodo()"> Add</button>
+
+    <div class="js-todo-list todo-grid">
+      <!-- Why use div instead of paragraph?
+    because we already used paragraoh in JS. And you can't use paragraph inside another paragraph-->
+    </div>
+
   </div>
+
 
 
 
