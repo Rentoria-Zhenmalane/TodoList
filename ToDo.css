@@ -12,6 +12,10 @@ body {
   align-items: center;
 }
 
+/*
+Align items default is to stretch to the size relative to it's button.
+*/
+
 .name-input,
 .date-input,
 .add-button {
