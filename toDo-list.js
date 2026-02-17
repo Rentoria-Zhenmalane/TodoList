@@ -17,7 +17,7 @@ function renderTodo() {
   toDoList.forEach(todoObject => {
     //const todoObject = toDoList[i];
     //access task from array and store in todo variable
-    //But since we use forEach loop, and it already have the variable toDoObject then this is unnecessary.
+    //But since we use forEach loop, and it already have the variable or parameter toDoObject then this is unnecessary.
 
     //const dueDate = todoObject.dueDate;
     //const name = todoObject.name; 
@@ -49,12 +49,13 @@ function renderTodo() {
   //gets the .js-todo-list from html file and change the content into todoListHTML.
 
   document.querySelectorAll('.js-delete-button')
-    .forEach((index) => {
-      addEventListener('click', () => {
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', () => {
         toDoList.splice(index, 1);
         renderTodo();
       })
     })
+
 
 }
 
@@ -73,7 +74,7 @@ function addTodo() {
 
   const dueDate = dateElement.value;
   const name = inputElement.value;
-  console.log(name);
+  console.log(name, dueDate);
   //Gets whatever value the user put inside the textbox and print it in the console
 
   toDoList.push
@@ -82,7 +83,7 @@ function addTodo() {
       //dueDate: dueDate
       name,
       dueDate
-      //shortcut of above
+      //shortcut of above also called as shorthand
     });
 
 
