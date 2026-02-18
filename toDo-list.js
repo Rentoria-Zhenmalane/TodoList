@@ -63,6 +63,7 @@ document.querySelector('.js-add-button')
   .addEventListener('click', () => {
     addTodo();
   });
+  //No need to add parameter because there's only 1 to do and it does the exact same thing.
 
 
 function addTodo() {
